@@ -3,16 +3,23 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Bienvenida</title>
+   <title>Bienvenido</title>
    <link rel="stylesheet" href="diseño.css">
 </head>
 <body>
    <h1>Bienvenido</h1>
    <p>Elige un juego para comenzar:</p>
    <div id="gameSelection">
-       <button onclick="location.href='buscaminas/index.html'">Jugar al Buscaminas</button>
-       <button onclick="location.href='mastermind/index.html'">Jugar al Mastermind</button>
-   </div>
+      <a href="buscaminas/index.html" class="game-link">
+         <img src="images/Buscaminas.jpg" alt="Jugar al Buscaminas" class="game-button">
+         <span class="game-title">Buscaminas</span>
+      </a>
+
+      <a href="mastermind/index.html" class="game-link">
+          <img src="images/Mastermind.jpg" alt="Jugar al Mastermind" class="game-button">
+          <span class="game-title">Mastermind</span>
+      </a>
+  </div>
    <footer>
       <div class="social-links">
           <a href="https://www.linkedin.com/in/miguel-angel-garz%C3%B3n-0a729b253/" target="_blank">
