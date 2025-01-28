@@ -1,0 +1,48 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #F3E5F5, #B3E5FC); /* Fondo degradado suave entre lavanda y azul claro */
+    color: #333; /* Color de texto oscuro para buen contraste */
+}
+
+p {
+    font-size: 1.2em;
+    color: #555; /* Color suave para el párrafo */
+    margin: 0 20px;
+}
+
+#gameSelection {
+    margin-top: 20px;
+}
+
+button {
+    width: 220px;
+    padding: 12px;
+    margin: 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: #6200EE; /* Color morado suave para el fondo */
+    color: #FFFFFF; /* Color blanco para el texto */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #BB86FC; /* Fondo morado más claro al pasar el ratón */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del botón */
+    box-shadow: 0px 4px 20px rgba(98, 0, 238, 0.5); /* Sombra sutil para dar profundidad */
+}
+
+button:active {
+    transform: scale(1); /* Vuelve al tamaño original al hacer clic */
+    box-shadow: 0px 4px 10px rgba(98, 0, 238, 0.3); /* Sombra más suave al hacer clic */
+}

@@ -1,9 +1,15 @@
+
+body{
+    background: linear-gradient(135deg, #F3E5F5, #B3E5FC);
+}
+
 main{
     padding: 0;
     margin: 0;
     font-family: 'Lato';
     max-width: 800px;
     margin: 0 auto;
+    background: linear-gradient(135deg, #F3E5F5, #B3E5FC);
 }
 
 .flex{
@@ -61,6 +67,8 @@ main{
     top:0;
     background-color: white;
     z-index: 100;
+    background: linear-gradient(135deg, #F3E5F5, #B3E5FC);
+
 }
 #white{background-color: white; border: 1px solid black;}
 #blue{background-color: blue;}
