@@ -132,37 +132,7 @@ function descubrirTodaMatriz(tablero) {
 function submitForm(event) {
     event.preventDefault();
 
-    // Validaciones personalizadas
-    const fechaNacimiento = new Date(document.getElementById('fechaNacimiento').value);
-    const edad = new Date().getFullYear() - fechaNacimiento.getFullYear();
-    //Si el user es menor de edad se le impide jugar:
-    if (edad < 18) {
-        displayErrorMessage('Debes ser mayor de edad.');
-        return;
-    }
-
-    //Pedimos un nick el cual termine en un num:
-    const nick = document.getElementById('nick').value;
-    if (!/\d$/.test(nick)) {
-        displayErrorMessage('El nick debe terminar en un número.');
-        return;
-    }
-
-    //Pedimos un correo el cual debe acabar en @itb:
-    const mail = document.getElementById('mail').value;
-    if (!/.+@itb\./.test(mail)) {
-        displayErrorMessage('El correo electrónico debe ser del ITB.');
-        return;
-    }
-
-    // Obtenemos los valores del formulario (para guardarlos en el localStorage):
-    const nombre = document.getElementById('nombre').value;
-    const apellido = document.getElementById('apellido').value;
-
-    //FUncion que veremos mas adelante para guardar los valores en el localStorage:
-    guardarUsuarioLocalStorage(nombre, apellido);
-
-    //Obtenemos las nuevas dimensiones del tablero
+    // Obtenemos las nuevas dimensiones del tablero
     const nuevasFilas = parseInt(document.getElementById('filas').value);
     const nuevasColumnas = parseInt(document.getElementById('columnas').value);
     const nuevasBombas = parseInt(document.getElementById('bombas').value);
@@ -172,7 +142,7 @@ function submitForm(event) {
     tableroJuego.columnas = nuevasColumnas;
     tableroJuego.cantidadBombas = nuevasBombas;
 
-    // Limpiamos el tablero actual y colocamos uans nuevas bombas
+    // Limpiamos el tablero actual y colocamos nuevas bombas
     tableroJuego.celdas = [];
     const tableroAnterior = document.getElementById('tableroBuscaminas');
     if (tableroAnterior) {
@@ -228,7 +198,6 @@ const filas = 8;
 const columnas = 10;
 const cantidadBombas = 10;
 const celdas = [];
-
 
 const tableroJuego = new Tablero(filas, columnas, cantidadBombas, celdas);
 generarTablero(tableroJuego);
