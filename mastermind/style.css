@@ -1,0 +1,204 @@
+main{
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato';
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.center{
+    justify-content: center;
+    align-items: center;
+    align-content: normal;
+}
+
+.w25{
+    width: 25%;    
+}
+
+.w50{
+    width: 50%;    
+}
+
+.h50{
+    height: 50%;    
+}
+
+.w40{
+    width: 40%;    
+}
+
+.h40{
+    height: 40%;    
+}
+
+.w75{
+    width: 75%;    
+}
+
+
+.w8{
+    width: 8%;
+    cursor: pointer;    
+}
+.w90{
+    width: 90%;
+}
+.w100{
+    width: 100%;
+}
+
+.bloqueado{
+    position: sticky;
+    top:0;
+    background-color: white;
+    z-index: 100;
+}
+#white{background-color: white; border: 1px solid black;}
+#blue{background-color: blue;}
+#green{background-color: green;}
+#violet{background-color: violet}
+#yellow{background-color: yellow;}
+#red{background-color: red;}
+#orange{background-color: orange;}
+#cyan{background-color: cyan;}
+
+.grey{background-color: #BABABA;}
+
+
+.cel{
+    height: 82px;
+    z-index: 1;
+    width: 90%;
+    font-weight: bold;
+    position: relative;
+    margin: 5px auto;
+    background-color: grey;
+    border-radius: 10px;    
+    text-align: center;    
+    justify-content: center;
+    font-size: 2.25em;
+    align-items: center;
+    border: 2px solid black;
+}
+
+
+.gris {
+    background-color: #BABABA;
+}
+
+.rectangulo {
+    width: 100px; 
+    height: 50px; 
+    margin: 5px; 
+    background-color: gray;
+    border: 1px solid black; 
+    border-radius: 5px;
+}
+
+.circulo {
+    width: 20px; /* ajusta el tamaño según tus necesidades */
+    height: 20px; /* ajusta el tamaño según tus necesidades */
+    margin: 5px; /* ajusta el margen según tus necesidades */
+    background-color: gray; /* ajusta el color según tus necesidades */
+    border-radius: 50%; /* para que sea un círculo */
+    border: 1px solid black; /* añade un borde negro */
+}
+
+.celUserCombi {
+    height: 82px;
+    z-index: 1;
+    width: 20%;
+    font-weight: bold;
+    position: relative;
+    margin: 5px; /* Ajusta el margen según tus preferencias */
+    background-color: #BABABA;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 2.25em;
+    align-items: center;
+    border: 1px solid #BABABA;
+    display: inline-block; /* Alinea los círculos en línea */
+}
+
+
+.flex {
+    display: flex;
+    justify-content: center; /* Ajusta la justificación según tus necesidades */
+    align-items: center; /* Centra verticalmente los elementos en el contenedor */
+}
+
+.cercleResult{
+    height: 30px;
+    z-index: 1;
+    width: 30px;
+    position: relative;
+    margin: 2px auto;
+    background-color: grey;
+    border-radius: 50%;  
+    border: 1px solid grey;  
+}
+
+.comprobar, .info{
+    border: 1px solid #1aa1f0;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.comprobar *, .info *{
+    margin: 10px;
+}
+.info{
+    border-color: crimson;
+    background-color: crimson;
+    color: white;
+}
+label{
+    color: #1aa1f0;
+    font-weight: bold;
+}
+input{
+    box-sizing: border-box;
+    width: 40%;    
+    border: none;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    padding: 10px;
+    border-bottom: 2px solid #1aa1f0;
+    outline: none;
+    border-radius: 5px 5px 0 0;
+}
+
+input:focus, input:hover{    
+    background-color: #BABABA;
+}
+
+
+button{
+    width: 55%;
+    padding: 15px;
+    background-color: #1aa1f0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.17em;
+    margin-bottom: 10px;
+}
+
+button:hover, button:focus{    
+    background-color: #1aa1f075;    
+    cursor: pointer;
+}
+
+
+

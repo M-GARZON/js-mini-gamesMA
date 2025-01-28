@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Buscaminas</title>
+   <link rel="stylesheet" href="diseño.css">
+</head>
+
+<body>
+   <h1>Formulario Buscaminas</h1>
+   <form id="userForm" onsubmit="submitForm(event)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" required>
+        <label for="fechaNacimiento">Fecha de Nacimiento (YYYY-MM-DD):</label>
+        <input type="date" id="fechaNacimiento" required>
+        <label for="nick">Nick (Debe terminar en un número):</label>
+        <input type="text" id="nick" required pattern=".*\d$">
+        <label for="mail">Correo Electrónico (debe ser del ITB):</label>
+        <input type="email" id="mail" required pattern=".+@itb\.cat">
+        <label for="filas">Filas:</label>
+        <input type="number" id="filas" required>
+        <label for="columnas">Columnas:</label>
+        <input type="number" id="columnas" required>
+        <label for="bombas">Bombas:</label>
+        <input type="number" id="bombas" required>
+        <div id="error-message"></div>
+        <button type="submit" id="enviarBtn">Enviar</button>
+    </form>
+
+
+   <div>
+   </div>
+   <script src="tablero.js"></script>
+   <script src="celda.js"></script>
+   <script src="script.js"></script>
+</body>
+
+
+
+
+</html>
+

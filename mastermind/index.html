@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js" defer></script>
+    <title>Mastermind</title>
+</head>
+
+<body class="w100" onload="init()">
+    <main class="w100">
+        <div class="bloqueado">     
+            <h1>Mastermind</h1>
+            <section id="master" class="w100 flex wrap center">
+                <div class="w100 flex wrap">
+                    <div class="w25">
+                        <div class="cel flex"></div>
+                    </div>
+                    <div class="w25">
+                        <div class="cel flex"></div>
+                    </div>
+                    <div class="w25">
+                        <div class="cel flex"></div>
+                    </div>
+                    <div class="w25">
+                        <div class="cel flex"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="w100 flex wrap center comprobar">
+                <label class="w90" for="numero">Haz tu combinación seleccionando los colores que quieras</label><br>
+                <section id="selección" class="w100 flex wrap center">
+                    <div class="w100 flex wrap center">
+                        <div class="w8">
+                            <div id="white" class="w100 cel flex" onclick="añadeColor('white')"></div>
+                        </div>
+                        <div class="w8">
+                            <div id="green" class="w100 cel flex" onclick="añadeColor('green')"></div>
+                        </div>
+                        <div class="w8">
+                            <div id="red" class="w100 cel flex" onclick="añadeColor('red')"></div>
+                        </div>
+                        <div class="w8">
+                            <div id="blue" class="w100 cel flex" onclick="añadeColor('blue')"></div>
+                        </div>
+                        <div class="w8">
+                            <div id="violet" class="w100 cel flex" onclick="añadeColor('violet')"></div>
+                        </div>
+                        <div class="w8">
+                            <div id="yellow" class="w100 cel flex" onclick="añadeColor('yellow')"></div>
+                        </div>
+                        <div class="w8">
+                            <div id="orange" class="w100 cel flex" onclick="añadeColor('orange')"></div>
+                        </div>
+                        <div class="w8">
+                            <div id="cyan" class="w100 cel flex" onclick="añadeColor('cyan')"></div>
+                        </div>
+                    </div>
+                </section>
+                <input disabled class="w90" type="text" id="combiText" name="combiText" value=""><br>
+                <button class="w90" id="checkButton" onclick="Comprobar()">Comprobar</button>
+            </section>
+
+            
+        </div>
+
+        <section id="Result" class="flex wrap center">
+            <div class="rowResult w100 flex wrap"></div>
+        </section>
+        
+
+        <section>
+            <h3>Reglas del juego</h3>
+            <p>Cada círculo negro indica un color que está en el código secreto, y además en la posición correcta.</p>
+            <p>Cada círculo blanco indica un color que está en el código secreto, pero no en la posición correcta.</p>
+        
+        </section>
+
+        <section class="w100 flex wrap">
+           
+            <section id="rectangulos" class="w75 flex wrap"></section>
+
+            
+            <section id="circulos" class="w25 flex wrap">
+
+            </section>
+        </section>
+
+        <div id="resultados-container" class="resultados"></div>
+
+    </main>
+</body>
+
+</html>
+
