@@ -61,6 +61,12 @@ p {
     color: black;
 }
 
+.canvas-border {
+    border: 2px solid #000; /* Borde negro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para darle un efecto de recuadro */
+    margin-top: 20px;
+}
+
 footer {
     margin-top: auto;
     padding: 20px;
