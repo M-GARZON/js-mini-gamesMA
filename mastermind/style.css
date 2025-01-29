@@ -1,4 +1,3 @@
-
 body{
     background: linear-gradient(135deg, #F3E5F5, #B3E5FC);
 }
@@ -6,7 +5,7 @@ body{
 main{
     padding: 0;
     margin: 0;
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     max-width: 800px;
     margin: 0 auto;
     background: linear-gradient(135deg, #F3E5F5, #B3E5FC);
@@ -68,14 +67,15 @@ main{
     width: 75%;    
 }
 
-
 .w8{
     width: 8%;
     cursor: pointer;    
 }
+
 .w90{
     width: 90%;
 }
+
 .w100{
     width: 100%;
 }
@@ -86,8 +86,8 @@ main{
     background-color: white;
     z-index: 100;
     background: linear-gradient(135deg, #F3E5F5, #B3E5FC);
-
 }
+
 #white{background-color: white; border: 1px solid black;}
 #blue{background-color: blue;}
 #green{background-color: green;}
@@ -98,7 +98,6 @@ main{
 #cyan{background-color: cyan;}
 
 .grey{background-color: #BABABA;}
-
 
 .cel{
     height: 82px;
@@ -116,7 +115,6 @@ main{
     border: 2px solid black;
 }
 
-
 .gris {
     background-color: #BABABA;
 }
@@ -131,12 +129,12 @@ main{
 }
 
 .circulo {
-    width: 20px; /* ajusta el tamaño según tus necesidades */
-    height: 20px; /* ajusta el tamaño según tus necesidades */
-    margin: 5px; /* ajusta el margen según tus necesidades */
-    background-color: gray; /* ajusta el color según tus necesidades */
-    border-radius: 50%; /* para que sea un círculo */
-    border: 1px solid black; /* añade un borde negro */
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    background-color: gray;
+    border-radius: 50%;
+    border: 1px solid black;
 }
 
 .celUserCombi {
@@ -145,21 +143,20 @@ main{
     width: 20%;
     font-weight: bold;
     position: relative;
-    margin: 5px; /* Ajusta el margen según tus preferencias */
+    margin: 5px;
     background-color: #BABABA;
     border-radius: 10px;
     text-align: center;
     font-size: 2.25em;
     align-items: center;
     border: 1px solid #BABABA;
-    display: inline-block; /* Alinea los círculos en línea */
+    display: inline-block;
 }
-
 
 .flex {
     display: flex;
-    justify-content: center; /* Ajusta la justificación según tus necesidades */
-    align-items: center; /* Centra verticalmente los elementos en el contenedor */
+    justify-content: center;
+    align-items: center;
 }
 
 .cercleResult{
@@ -184,15 +181,18 @@ main{
 .comprobar *, .info *{
     margin: 10px;
 }
+
 .info{
     border-color: crimson;
     background-color: crimson;
     color: white;
 }
+
 label{
     color: #1aa1f0;
     font-weight: bold;
 }
+
 input{
     box-sizing: border-box;
     width: 40%;    
@@ -209,15 +209,14 @@ input:focus, input:hover{
     background-color: #BABABA;
 }
 
-
 button {
     width: 220px;
     padding: 12px;
     margin: 12px;
     border: none;
     border-radius: 12px;
-    background-color: #6200EE; /* Color morado suave para el fondo */
-    color: #FFFFFF; /* Color blanco para el texto */
+    background-color: #6200EE;
+    color: #FFFFFF;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -225,16 +224,12 @@ button {
 }
 
 button:hover {
-    background-color: #BB86FC; /* Fondo morado más claro al pasar el ratón */
-    transform: scale(1.03); /* Aumenta ligeramente el tamaño del botón */
-    box-shadow: 0px 4px 20px rgba(98, 0, 238, 0.5); /* Sombra sutil para dar profundidad */
+    background-color: #BB86FC;
+    transform: scale(1.03);
+    box-shadow: 0px 4px 20px rgba(98, 0, 238, 0.5);
 }
 
 button:active {
-    transform: scale(1); /* Vuelve al tamaño original al hacer clic */
-    box-shadow: 0px 4px 10px rgba(98, 0, 238, 0.3); /* Sombra más suave al hacer clic */
+    transform: scale(1);
+    box-shadow: 0px 4px 10px rgba(98, 0, 238, 0.3);
 }
-
-
-
-

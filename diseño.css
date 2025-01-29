@@ -8,20 +8,23 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, #F3E5F5, #B3E5FC); /* Fondo degradado suave entre lavanda y azul claro */
-    color: #333; /* Color de texto oscuro para buen contraste */
+    background: linear-gradient(135deg, #F3E5F5, #B3E5FC);
+    color: #333;
 }
 
 p {
     font-size: 1.2em;
-    color: #555; /* Color suave para el párrafo */
+    color: #555;
     margin: 0 20px;
 }
 
 #gameSelection {
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
+    padding: 0 10px;
 }
 
 .game-link {
@@ -32,13 +35,13 @@ p {
 .game-button {
     width: 275px;
     height: 200px;
-    border-radius: 8px; /* Si quieres bordes redondeados */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Efecto de transición */
+    border-radius: 8px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .game-link:hover .game-button {
-    opacity: 0.3; /* Baja la opacidad al pasar el ratón */
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen al pasar el ratón */
+    opacity: 0.3;
+    transform: scale(1.05);
 }
 
 .game-title {
@@ -54,7 +57,7 @@ p {
 }
 
 .game-link:hover .game-title {
-    opacity: 1; /* Muestra el título al pasar el ratón */
+    opacity: 1;
     color: black;
 }
 
@@ -62,16 +65,17 @@ footer {
     margin-top: auto;
     padding: 20px;
     background-color: #ffffff;
-    color: #FFD700; /* Color dorado para el texto */
+    color: #FFD700;
     text-align: center;
     width: 100%;
-    border-top: 2px solid #6200EE; /* Añade una línea morada en la parte superior */
+    border-top: 2px solid #6200EE;
 }
 
 footer .social-links {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
     margin-bottom: 10px;
 }
 
@@ -82,11 +86,56 @@ footer .social-icon {
 }
 
 footer .social-icon:hover {
-    transform: scale(1.1); /* Agranda los íconos al pasar el ratón */
-    filter: brightness(1.2); /* Aumenta el brillo de los íconos */
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
 footer .contact-info {
     margin-top: 10px;
     font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .game-button {
+        width: 220px;
+        height: 160px;
+    }
+    .game-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    p {
+        font-size: 1em;
+    }
+    .game-button {
+        width: 180px;
+        height: 140px;
+    }
+    .game-title {
+        font-size: 18px;
+    }
+    footer {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #gameSelection {
+        flex-direction: column;
+        align-items: center;
+    }
+    .game-button {
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+    }
+    .game-title {
+        font-size: 16px;
+    }
+    footer .contact-info {
+        font-size: 12px;
+    }
 }
