@@ -24,7 +24,10 @@
     <!-- Sección Hero / Inicio -->
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Hola, soy <span class="highlight">Miguel Ángel Garzón</span></h1>
+            <img src="images/personal/miguel.jpg" alt="Miguel Ángel Garzón" class="image-profile">
+            <a href="https://www.linkedin.com/in/miguel-angel-garz%C3%B3n-0a729b253/" target="_blank" class="hero-title-link">
+                <h1 class="hero-title"><span class="highlight">Miguel Ángel Garzón</span></h1>
+            </a>
             <p class="hero-subtitle">Desarrollador Web y Programador</p>
             <p class="hero-description">Apasionado por crear experiencias digitales innovadoras y funcionales</p>
             <div class="hero-buttons">
@@ -46,15 +49,12 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Soy un desarrollador apasionado por la programación y la creación de soluciones 
-                        innovadoras. Me especializo en desarrollo web con JavaScript, HTML y CSS, 
-                        creando aplicaciones interactivas y juegos que combinan funcionalidad con 
-                        una excelente experiencia de usuario.
+                        Profesional proactivo y altamente motivado, con una sólida pasión por la informática y el desarrollo web. Con formación en Desarrollo de Aplicaciones Web y experiencia práctica en programación, bases de datos y diseño web, me especializo en ofrecer soluciones técnicas eficientes y de calidad, siempre con un enfoque en la mejora continua y la innovación.
                     </p>
                     <p>
-                        Mi enfoque se centra en escribir código limpio, eficiente y bien estructurado, 
-                        siempre buscando aprender nuevas tecnologías y mejorar mis habilidades.
+                        Cuento con sólidos conocimientos en hardware, software, redes, gestión de información, administracion de sistemas y ciberseguridad. Además, tengo experiencia profesional en la empresa Remihogar, donde puse en práctica mis conocimientos y desarrollé habilidades en marketing digital, posicionamiento SEO, ecommerce y UX/UI.
                     </p>
+                    <p>Comprometido con el aprendizaje constante, busco seguir creciendo profesionalmente mediante nuevos desafíos y certificaciones, especialmente en programación y desarrollo web, contribuyendo al éxito y crecimiento de los proyectos en los que participo</p>
                 </div>
                 <div class="about-stats">
                     <div class="stat-item">
@@ -163,7 +163,26 @@
         </div>
     </footer>
 
-    <script src="portfolio.js"></script>
+    <script>
+        document.addEventListener("scroll", () => {
+            const bg = document.querySelector(".hero-decoration");
+            const scrollY = window.scrollY;
+        
+            // Ajusta estos valores si quieres
+            const speed = 0.30;       // Intensidad del movimiento
+            const maxShift = 500;      // Máximo desplazamiento (en px)
+        
+            // Calculamos desplazamiento limitado
+            let offset = scrollY * speed;
+            if (offset > maxShift) offset = maxShift;
+        
+            // Aplicamos parallax manteniendo la imagen centrada
+            bg.style.backgroundPosition = `center calc(50% + ${offset}px)`;
+        });
+        </script>
+        
+        
+        
 </body>
 </html>
 

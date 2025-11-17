@@ -117,11 +117,50 @@ body {
     padding: 2rem;
 }
 
+.hero-title-link {
+    display: inline-block; /* <--- añadir esto */
+    color: inherit;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 2px;
+    transition: background-size 0.3s ease, color 0.3s ease;
+}
+
+.hero-title-link:hover {
+    background-size: 100% 2px;
+    color: var(--gold);
+    text-shadow: 0 0 5px var(--shadow-gold);
+}
+
+
+
+
 .hero-title {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease;
 }
+
+.image-profile{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: block;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 20px var(--shadow-gold);
+}
+
+.parallax-img {
+    transform: translateY(0);
+    transition: transform 0.1s linear;
+    will-change: transform;
+}
+
+
 
 .highlight {
     color: var(--gold);
@@ -195,6 +234,12 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
+    background-image: url('images/personal/zafri.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: background-position 0.1s linear;
+    opacity: 0.3;
 }
 
 .floating-shape {
