@@ -349,6 +349,151 @@ section {
     font-weight: 500;
 }
 
+/* Educación */
+.education {
+    background: var(--black-dark);
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.education-card {
+    background: linear-gradient(135deg, var(--gray), var(--gray-light));
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--gold);
+    box-shadow: 0 5px 15px var(--shadow-black);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px var(--shadow-gold);
+    border-color: var(--gold-light);
+}
+
+.education-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.education-card h3 {
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px var(--shadow-gold);
+}
+
+.education-period {
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.education-description {
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Experiencia Laboral */
+.experience {
+    background: var(--black);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    background: linear-gradient(135deg, var(--gray), var(--gray-light));
+    border-radius: 15px;
+    border: 1px solid var(--gold);
+    box-shadow: 0 5px 15px var(--shadow-black);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px var(--shadow-gold);
+    border-color: var(--gold-light);
+}
+
+.experience-image-container {
+    width: 100%;
+    height: 200px;
+    background: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--gold);
+}
+
+.experience-image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+}
+
+.experience-image-icon {
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.experience-image-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.experience-content {
+    padding: 2rem;
+    flex: 1;
+}
+
+.experience-content h3 {
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px var(--shadow-gold);
+}
+
+.experience-company {
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.experience-period {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.experience-description {
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
 /* Habilidades */
 .skills {
     background: var(--black-dark);
@@ -456,7 +601,7 @@ section {
 
 /* Contacto */
 .contact {
-    background: var(--black-dark);
+    background: var(--black);
 }
 
 .contact-content {
@@ -599,6 +744,14 @@ section {
     }
 
     .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-grid {
         grid-template-columns: 1fr;
     }
 
