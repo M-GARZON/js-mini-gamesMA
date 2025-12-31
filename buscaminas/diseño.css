@@ -1,82 +1,55 @@
-
-
-
-
+/* Estilos base */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #F3E5F5, #B3E5FC);
-    min-height: 100vh; 
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 h1 {
     text-align: center;
+    margin: 20px 0;
+    padding: 0 15px;
+    font-size: 2rem;
+    color: #333;
 }
 
 form {
     max-width: 700px;
     margin: 20px auto;
-    padding: 50px;
+    padding: 30px;
     background: linear-gradient(135deg, #F3E5F5, #B3E5FC);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
 }
 
 label {
     display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1rem;
 }
 
 input {
-    width: 97%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 4px;
-}
-
-button {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    color: #000000; /* Color negro para el texto */
-    background: #F3E5F5;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones para el color de fondo y la transformación */
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
-
-button:hover {
-    background-color: #B3E5FC; /* Fondo dorado más claro al pasar el ratón */
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón al pasar el ratón */
+input:focus {
+    outline: none;
+    border-color: #6200EE;
+    box-shadow: 0 0 0 2px rgba(98, 0, 238, 0.2);
 }
-
-td.empty {
-    background-color: #F3E5F5; 
-    color: #B2DFDB; 
-    border: 1px solid #B2DFDB; 
-    padding: 5px; 
-}
-
-td.no-number {
-    background-color: #F3E5F5;
-    color: #B2DFDB; 
-}
-
-#tableroContainer {
-    text-align: center;
-}
-
-#tableroBuscaminas {
-    display: none;
-    margin: 20px auto 50px auto; 
-    border-collapse: collapse;
-    background-color: #B2DFDB; 
-    color: #000000; 
-}
-
 
 button {
     width: 220px;
@@ -84,21 +57,285 @@ button {
     margin: 12px;
     border: none;
     border-radius: 12px;
-    background-color: #6200EE; /* Color morado suave para el fondo */
-    color: #FFFFFF; /* Color blanco para el texto */
+    background-color: #6200EE;
+    color: #FFFFFF;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 button:hover {
-    background-color: #BB86FC; /* Fondo morado más claro al pasar el ratón */
-    transform: scale(1.03); /* Aumenta ligeramente el tamaño del botón */
-    box-shadow: 0px 4px 20px rgba(98, 0, 238, 0.5); /* Sombra sutil para dar profundidad */
+    background-color: #BB86FC;
+    transform: scale(1.03);
+    box-shadow: 0px 4px 20px rgba(98, 0, 238, 0.5);
 }
 
 button:active {
-    transform: scale(1); /* Vuelve al tamaño original al hacer clic */
-    box-shadow: 0px 4px 10px rgba(98, 0, 238, 0.3); /* Sombra más suave al hacer clic */
+    transform: scale(1);
+    box-shadow: 0px 4px 10px rgba(98, 0, 238, 0.3);
+}
+
+td.empty {
+    background-color: #F3E5F5;
+    color: #B2DFDB;
+    border: 1px solid #B2DFDB;
+    padding: 5px;
+}
+
+td.no-number {
+    background-color: #F3E5F5;
+    color: #B2DFDB;
+}
+
+#tableroContainer {
+    text-align: center;
+    padding: 0 15px;
+    overflow-x: auto;
+}
+
+#tableroBuscaminas {
+    display: none;
+    margin: 20px auto 50px auto;
+    border-collapse: collapse;
+    background-color: #B2DFDB;
+    color: #000000;
+    max-width: 100%;
+}
+
+/* Estilos para las celdas del tablero */
+#tableroBuscaminas td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #80CBC4;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+#tableroBuscaminas td:hover {
+    background-color: #E0F2F1;
+}
+
+/* Media Queries para Responsive */
+
+/* Tabletas (hasta 1024px) */
+@media (max-width: 1024px) {
+    form {
+        max-width: 90%;
+        padding: 25px;
+        margin: 15px auto;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin: 15px 0;
+    }
+    
+    button {
+        width: 200px;
+        padding: 14px;
+        margin: 10px;
+    }
+    
+    #tableroBuscaminas td {
+        width: 35px;
+        height: 35px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Tabletas pequeñas y móviles grandes (hasta 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    form {
+        max-width: 95%;
+        padding: 20px;
+        margin: 10px auto;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin: 15px 0 10px 0;
+    }
+    
+    label {
+        font-size: 0.95rem;
+    }
+    
+    input {
+        padding: 10px;
+        font-size: 0.95rem;
+        margin: 8px 0 15px 0;
+    }
+    
+    button {
+        width: 180px;
+        padding: 12px;
+        margin: 8px;
+        font-size: 15px;
+    }
+    
+    #tableroBuscaminas td {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    #tableroContainer {
+        padding: 0 10px;
+    }
+}
+
+/* Móviles (hasta 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    form {
+        max-width: 100%;
+        padding: 15px;
+        margin: 5px auto;
+        border-radius: 6px;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+        margin: 10px 0;
+        padding: 0 10px;
+    }
+    
+    label {
+        font-size: 0.9rem;
+    }
+    
+    input {
+        padding: 8px;
+        font-size: 0.9rem;
+        margin: 6px 0 12px 0;
+    }
+    
+    button {
+        width: 100%;
+        max-width: 250px;
+        padding: 14px;
+        margin: 8px auto;
+        display: block;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+    
+    #tableroBuscaminas {
+        margin: 15px auto 30px auto;
+    }
+    
+    #tableroBuscaminas td {
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+        padding: 0;
+    }
+    
+    /* Para botones dentro del contenedor del tablero */
+    #tableroContainer button {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+/* Móviles muy pequeños (hasta 360px) */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    form {
+        padding: 12px;
+    }
+    
+    input {
+        padding: 7px;
+        font-size: 0.85rem;
+    }
+    
+    button {
+        padding: 12px;
+        font-size: 15px;
+        border-radius: 6px;
+    }
+    
+    #tableroBuscaminas td {
+        width: 22px;
+        height: 22px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding: 5px;
+        min-height: auto;
+    }
+    
+    form {
+        max-width: 90%;
+        padding: 15px;
+        margin: 5px auto;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+        margin: 5px 0;
+    }
+    
+    #tableroBuscaminas td {
+        width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Para evitar zoom en inputs en iOS */
+@media (max-width: 768px) {
+    button, input, select, textarea {
+        font-size: 16px; /* Previene zoom en iOS */
+    }
+}
+
+/* Soporte para pantallas con notches (iPhone X, etc.) */
+@supports (padding: max(0px)) {
+    body {
+        padding-left: max(5px, env(safe-area-inset-left));
+        padding-right: max(5px, env(safe-area-inset-right));
+        padding-top: max(5px, env(safe-area-inset-top));
+        padding-bottom: max(5px, env(safe-area-inset-bottom));
+    }
+}
+
+/* Clase para contenedor de botones responsivos */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+@media (max-width: 480px) {
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
 }

@@ -414,11 +414,12 @@ section {
 
 .experience-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 1000px;
+    max-width: 1200px; /* opcional, pero recomendable */
     margin: 0 auto;
 }
+
 
 .experience-card {
     background: linear-gradient(135deg, var(--gray), var(--gray-light));
