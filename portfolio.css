@@ -414,7 +414,7 @@ section {
 
 .experience-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     max-width: 1200px; /* opcional, pero recomendable */
     margin: 0 auto;
@@ -446,6 +446,8 @@ section {
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid var(--gold);
+    
+    padding: 20px 0; 
 }
 
 .experience-image-placeholder {
