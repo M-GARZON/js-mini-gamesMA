@@ -69,14 +69,12 @@ function Comprobar() {
         for (let i = 0; i < MAX_COMBI_COLORES; i++) {
             rectangulosExistente[i].style.backgroundColor = userCombi[i];
 
-            // Pinta los círculos según el resultado de la comparación
             if (resultado[i] === 'black') {
                 circulosExistente[i].style.backgroundColor = 'black';
             } else if (resultado[i] === 'white') {
                 circulosExistente[i].style.backgroundColor = 'white';
             } else {
-                circulosExistente[i].style.back
-                groundColor = 'grey';
+                circulosExistente[i].style.backgroundColor = 'grey';
             }
         }
 
