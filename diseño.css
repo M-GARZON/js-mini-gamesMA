@@ -130,7 +130,6 @@ footer .contact-info {
     font-size: 14px;
 }
 
-/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
     .game-button {
         width: 220px;

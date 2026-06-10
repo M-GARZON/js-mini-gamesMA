@@ -1,4 +1,3 @@
-/* Estilos base */
 body {
     margin: 0;
     display: flex;
@@ -21,7 +20,6 @@ canvas {
         0 0 25px rgba(0, 191, 255, 0.4),
         0 20px 40px rgba(0, 0, 0, 0.8);
     
-    /* Tamaño base que se ajustará */
     width: 800px;
     height: 600px;
     max-width: 90vw;
@@ -63,9 +61,7 @@ button:active {
     z-index: 10;
 }
 
-/* Media Queries para Responsive */
-
-/* Tabletas y móviles grandes (hasta 1024px) */
+@media (max-width: 1024px) {
 @media (max-width: 1024px) {
     canvas {
         width: 90vw;
@@ -82,7 +78,6 @@ button:active {
     }
 }
 
-/* Móviles medianos (hasta 768px) */
 @media (max-width: 768px) {
     canvas {
         max-width: 95vw;
@@ -92,7 +87,7 @@ button:active {
     }
     
     button {
-        padding: 12px 28px; /* Botones más grandes para tocar fácilmente */
+        padding: 12px 28px;
         font-size: 16px;
     }
     
@@ -103,13 +98,12 @@ button:active {
     }
 }
 
-/* Móviles pequeños (hasta 480px) */
 @media (max-width: 480px) {
     body {
         padding: 5px;
-        justify-content: flex-start; /* Cambio para mejor scroll en móvil */
+        justify-content: flex-start;
         align-items: flex-start;
-        padding-top: 80px; /* Espacio para botones superiores */
+        padding-top: 80px;
     }
     
     canvas {
@@ -134,7 +128,7 @@ button:active {
         width: 95%;
     }
     
-    /* Para orientación landscape en móviles */
+    @media (max-height: 500px) and (orientation: landscape) {
     @media (max-height: 500px) and (orientation: landscape) {
         body {
             padding-top: 70px;
@@ -147,7 +141,6 @@ button:active {
     }
 }
 
-/* Ejemplo de controles táctiles para móviles */
 .touch-controls {
     display: none;
     position: absolute;
@@ -158,7 +151,6 @@ button:active {
 }
 
 
-/* Móviles muy pequeños (hasta 360px) */
 @media (max-width: 360px) {
     canvas {
         border-radius: 8px;
@@ -171,14 +163,12 @@ button:active {
     }
 }
 
-/* Para evitar zoom en inputs en iOS */
 @media (max-width: 768px) {
     button, input, select, textarea {
-        font-size: 16px; /* Previene zoom en iOS */
+        font-size: 16px;
     }
 }
 
-/* Soporte para pantallas con notches (iPhone X, etc.) */
 @supports (padding: max(0px)) {
     body {
         padding-left: max(5px, env(safe-area-inset-left));

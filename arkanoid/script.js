@@ -1,12 +1,9 @@
-// --- CONFIGURACIÓN BÁSICA DEL LIENZO ---
 const lienzo = document.getElementById('gameCanvas');
 const ctx = lienzo.getContext('2d');
 
-// Resolución base (se puede escalar por CSS si quieres hacerlo responsive)
 lienzo.width = 800;
 lienzo.height = 600;
 
-// --- CONSTANTES DEL JUEGO ---
 const ANCHO_PALETA = 110;
 const ALTO_PALETA = 14;
 const RADIO_PELOTA = 9;
@@ -18,15 +15,14 @@ const ESPACIO_LADRILLOS = 8;
 const OFFSET_SUPERIOR_LADRILLO = 60;
 const OFFSET_IZQUIERDO_LADRILLO = 40;
 
-const VELOCIDAD_PALETA = 5;          // antes 8
-const VELOCIDAD_PELOTA_INICIAL = 3;  // antes 5
-const MAX_VELOCIDAD_PELOTA = 6;      // antes 9
+const VELOCIDAD_PALETA = 5;
+const VELOCIDAD_PELOTA_INICIAL = 3;
+const MAX_VELOCIDAD_PELOTA = 6;
 
-// --- ESTADO DEL JUEGO ---
 let paletaX = (lienzo.width - ANCHO_PALETA) / 2;
 let pelotaX = lienzo.width / 2;
 let pelotaY = lienzo.height - 80;
-let velocidadPelotaX = 0; // al principio quieta, se lanza con ESPACIO
+let velocidadPelotaX = 0;
 let velocidadPelotaY = 0;
 
 let derechaPulsada = false;
@@ -39,7 +35,6 @@ let juegoIniciado = false;
 let juegoPausado = false;
 let juegoTerminado = false;
 
-// --- LADRILLOS ---
 const coloresFilas = ['#ff4b5c', '#ffb020', '#ffd447', '#66bb6a', '#42a5f5', '#ab47bc'];
 const ladrillos = [];
 
@@ -60,7 +55,6 @@ function crearLadrillos() {
 
 crearLadrillos();
 
-// --- CONTROLES ---
 document.addEventListener('keydown', manejarTeclaAbajo);
 document.addEventListener('keyup', manejarTeclaArriba);
 document.addEventListener('mousemove', moverConRaton);
@@ -68,10 +62,10 @@ document.addEventListener('mousemove', moverConRaton);
 function manejarTeclaAbajo(e) {
     if (e.key === 'Right' || e.key === 'ArrowRight') {
         derechaPulsada = true;
-        ratonX = null; // Priorizar control por teclado
+        ratonX = null;
     } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
         izquierdaPulsada = true;
-        ratonX = null; // Priorizar control por teclado
+        ratonX = null;
     } else if (e.key === ' ' || e.key === 'Spacebar') {
         if (!juegoIniciado) {
             iniciarRonda();
@@ -97,7 +91,6 @@ function moverConRaton(e) {
     ratonX = posX;
 }
 
-// --- DIBUJOS ---
 function dibujarFondo() {
     const gradiente = ctx.createLinearGradient(0, 0, 0, lienzo.height);
     gradiente.addColorStop(0, '#020024');
@@ -129,7 +122,6 @@ function dibujarPaleta() {
     ctx.closePath();
     ctx.fill();
 
-    // brillo
     ctx.fillStyle = 'rgba(255,255,255,0.2)';
     ctx.fillRect(paletaX + 10, yPaleta + 3, ANCHO_PALETA - 20, 4);
 }
@@ -177,7 +169,6 @@ function dibujarLadrillos() {
                 ctx.fillStyle = grad;
                 ctx.fillRect(ladrilloX, ladrilloY, ANCHO_LADRILLO, ALTO_LADRILLO);
 
-                // borde
                 ctx.strokeStyle = 'rgba(255,255,255,0.3)';
                 ctx.strokeRect(ladrilloX + 0.5, ladrilloY + 0.5, ANCHO_LADRILLO - 1, ALTO_LADRILLO - 1);
             }
@@ -241,12 +232,10 @@ function dibujarEstado() {
     }
 }
 
-// --- LÓGICA DEL JUEGO ---
 function iniciarRonda() {
     juegoIniciado = true;
     if (velocidadPelotaX === 0 && velocidadPelotaY === 0) {
-        // Lanzamos la pelota con un ángulo inicial aleatorio
-        const angulo = (Math.random() * Math.PI) / 3 + Math.PI / 6; // entre 30º y 90º
+        const angulo = (Math.random() * Math.PI) / 3 + Math.PI / 6;
         velocidadPelotaX = VELOCIDAD_PELOTA_INICIAL * Math.cos(angulo);
         velocidadPelotaY = -VELOCIDAD_PELOTA_INICIAL * Math.sin(angulo);
     }
@@ -283,7 +272,6 @@ function detectarColisionesLadrillos() {
                     pelotaY + RADIO_PELOTA > by &&
                     pelotaY - RADIO_PELOTA < by + ALTO_LADRILLO
                 ) {
-                    // Determinar de qué lado golpea para un rebote más realista
                     const dentroX =
                         Math.min(pelotaX + RADIO_PELOTA - bx, bx + ANCHO_LADRILLO - (pelotaX - RADIO_PELOTA));
                     const dentroY =
@@ -318,17 +306,14 @@ function todosLadrillosRotos() {
 }
 
 function detectarColisionesParedesYPala() {
-    // Paredes laterales
     if (pelotaX + RADIO_PELOTA > lienzo.width || pelotaX - RADIO_PELOTA < 0) {
         velocidadPelotaX = -velocidadPelotaX;
     }
 
-    // Techo
     if (pelotaY - RADIO_PELOTA < 0) {
         velocidadPelotaY = -velocidadPelotaY;
     }
 
-    // Pala
     const yPaleta = lienzo.height - ALTO_PALETA - 20;
     if (
         pelotaY + RADIO_PELOTA >= yPaleta &&
@@ -337,11 +322,10 @@ function detectarColisionesParedesYPala() {
         pelotaX <= paletaX + ANCHO_PALETA &&
         velocidadPelotaY > 0
     ) {
-        // Calcular rebote según punto de impacto
         const centroPaleta = paletaX + ANCHO_PALETA / 2;
         const distancia = pelotaX - centroPaleta;
-        const normalizado = distancia / (ANCHO_PALETA / 2); // entre -1 y 1
-        const angulo = normalizado * (Math.PI / 3); // hasta 60º
+        const normalizado = distancia / (ANCHO_PALETA / 2);
+        const angulo = normalizado * (Math.PI / 3);
 
         const velocidad = Math.min(
             Math.sqrt(velocidadPelotaX ** 2 + velocidadPelotaY ** 2) * 1.03,
@@ -350,10 +334,9 @@ function detectarColisionesParedesYPala() {
 
         velocidadPelotaX = velocidad * Math.sin(angulo);
         velocidadPelotaY = -Math.abs(velocidad * Math.cos(angulo));
-        pelotaY = yPaleta - RADIO_PELOTA - 1; // evitar quedarse pegada
+        pelotaY = yPaleta - RADIO_PELOTA - 1;
     }
 
-    // Parte inferior (pierde vida)
     if (pelotaY - RADIO_PELOTA > lienzo.height) {
         vidas--;
         if (vidas <= 0) {
@@ -366,7 +349,6 @@ function detectarColisionesParedesYPala() {
 
 function actualizarPaleta() {
     if (ratonX !== null) {
-        // Seguir al ratón con suavizado
         const objetivoX = ratonX - ANCHO_PALETA / 2;
         paletaX += (objetivoX - paletaX) * 0.25;
     } else {
@@ -377,11 +359,9 @@ function actualizarPaleta() {
         }
     }
 
-    // Limites
     if (paletaX < 0) paletaX = 0;
     if (paletaX + ANCHO_PALETA > lienzo.width) paletaX = lienzo.width - ANCHO_PALETA;
 
-    // Si la pelota aún no se ha lanzado, que siga a la pala
     if (!juegoIniciado && !juegoTerminado) {
         pelotaX = paletaX + ANCHO_PALETA / 2;
         pelotaY = lienzo.height - ALTO_PALETA - 20 - RADIO_PELOTA - 2;
@@ -393,7 +373,6 @@ function actualizarPelota() {
     pelotaY += velocidadPelotaY;
 }
 
-// --- BUCLE PRINCIPAL ---
 function bucle() {
     dibujarFondo();
     dibujarLadrillos();
@@ -408,13 +387,11 @@ function bucle() {
         detectarColisionesParedesYPala();
         detectarColisionesLadrillos();
     } else {
-        // Aunque esté pausado/estado inicial, actualizamos solo la pala para que siga al ratón
         actualizarPaleta();
     }
 
     requestAnimationFrame(bucle);
 }
 
-// Iniciar bucle
 reiniciarRonda();
 bucle();

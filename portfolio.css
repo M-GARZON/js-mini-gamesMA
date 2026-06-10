@@ -33,12 +33,11 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Navegación */
 .navbar {
     position: fixed;
     top: 0;
@@ -102,7 +101,6 @@ body {
     width: 100%;
 }
 
-/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -122,7 +120,7 @@ body {
 }
 
 .hero-title-link {
-    display: inline-block; /* <--- añadir esto */
+    display: inline-block;
     color: inherit;
     text-decoration: none;
     background-image: linear-gradient(currentColor, currentColor);
@@ -230,7 +228,6 @@ body {
     box-shadow: 0 4px 15px var(--shadow-gold);
 }
 
-/* Decoraciones flotantes */
 .hero-decoration {
     position: absolute;
     width: 100%;
@@ -286,7 +283,6 @@ body {
     box-shadow: 0 0 60px var(--shadow-gold);
 }
 
-/* Secciones */
 section {
     padding: 80px 0;
 }
@@ -306,7 +302,6 @@ section {
     font-size: 1.1rem;
 }
 
-/* Sobre Mí */
 .about {
     background: var(--black);
 }
@@ -353,18 +348,17 @@ section {
     font-weight: 500;
 }
 
-/* Educación */
 .education {
     background: var(--black-dark);
 }
 
-.education-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
+ .education-grid {
+     display: grid;
+     grid-template-columns: repeat(3, minmax(340px, 1fr));
+     gap: 2rem;
+     max-width: 1400px;
+     margin: 0 auto;
+ }
 
 .education-card {
     background: linear-gradient(135deg, var(--gray), var(--gray-light));
@@ -387,6 +381,20 @@ section {
     margin-bottom: 1rem;
 }
 
+.education-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.education-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+}
+
 .education-card h3 {
     color: var(--gold);
     margin-bottom: 0.5rem;
@@ -407,7 +415,6 @@ section {
     font-size: 1rem;
 }
 
-/* Experiencia Laboral */
 .experience {
     background: var(--black);
 }
@@ -416,7 +423,7 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    max-width: 1200px; /* opcional, pero recomendable */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -440,15 +447,15 @@ section {
 
 .experience-image-container {
     width: 100%;
-    height: 200px;
+    height: 300px;
     background: var(--gray);
     display: flex;
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid var(--gold);
-    
-    padding: 20px 0; 
+    padding: 20px 0;
 }
+
 
 .experience-image-placeholder {
     display: flex;
@@ -457,6 +464,39 @@ section {
     justify-content: center;
     gap: 0.5rem;
     color: var(--text-light);
+}
+
+.experience-image-placeholder img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.experience-card.large-image .experience-image-container {
+    height: 300px;
+    padding: 30px 0;
+}
+
+.experience-card.large-image .experience-image-placeholder img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.experience-card.xlarge-image .experience-image-container {
+    height: 300px;
+    padding: 20px 0;
+}
+
+.experience-card.xlarge-image .experience-image-placeholder img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .experience-image-icon {
@@ -470,7 +510,7 @@ section {
 }
 
 .experience-content {
-    padding: 2rem;
+    padding: 1rem;
     flex: 1;
 }
 
@@ -501,7 +541,6 @@ section {
     font-size: 1rem;
 }
 
-/* Habilidades */
 .skills {
     background: var(--black-dark);
 }
@@ -580,7 +619,6 @@ section {
     font-size: 0.95rem;
 }
 
-/* Proyectos */
 .projects {
     background: var(--black);
 }
@@ -637,7 +675,6 @@ section {
     text-shadow: 0 0 10px var(--shadow-gold);
 }
 
-/* Contacto */
 .contact {
     background: var(--black);
 }
@@ -787,7 +824,6 @@ section {
     height: 30px;
 }
 
-/* Footer */
 .footer {
     background: var(--black-dark);
     color: var(--text-gray);
@@ -796,7 +832,6 @@ section {
     border-top: 1px solid var(--gold);
 }
 
-/* Animaciones */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -817,7 +852,6 @@ section {
     }
 }
 
-/* Animaciones de aparición al hacer scroll */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -842,7 +876,6 @@ section {
     transform: translateX(0) translateY(0);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .nav-menu {
         flex-direction: column;
@@ -899,9 +932,19 @@ section {
         max-width: 400px;
         max-height: 600px;
     }
+
+    
+    .experience-image-container {
+        height: 220px;
+        padding: 12px 0;
+    }
+
+    .experience-card.xlarge-image .experience-image-container {
+        height: 220px;
+        padding: 12px 0;
+    }
 }
 
-/* Chatbot Styles */
 .chatbot-toggle {
     position: fixed;
     bottom: 30px;
